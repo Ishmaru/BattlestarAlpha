@@ -9,9 +9,10 @@ exports.score_index = (req, res, next) => {
   })
 }
 exports.score_create = (req, res, next) => {
+  // console.log(req.query);
   let score = new Score({
-    name: req.body.name || 'Cadet',
-    score: req.body.score
+    name: req.query.name || 'Cadet',
+    score: req.query.score
   });
   score.save(function (err){
     if(err){
@@ -29,7 +30,15 @@ exports.score_details = (req, res, next) =>  {
   })
 };
 exports.score_update = (req, res, next) =>  {
-  Score.findByIdAndUpdate(req.params.id, {$set: req.body}, function(err, score){
+  console.log(req.query);
+  let updateObj = {};
+  if(req.query.name){
+    updateObj.name = req.query.name;
+  }
+  if(req.query.score){
+    updateObj.score = req.query.score;
+  }
+  Score.findByIdAndUpdate(req.params.id, {$set: updateObj}, function(err, score){
     if(err){
       return next(err);
     }
