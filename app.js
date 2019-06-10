@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv').config();
 
 //Set up DB
-let dev_db_url = 'mongodb://StarOfficer:1LastStarfighter@ds149672.mlab.com:49672/battlestar_alpha';
 let mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;

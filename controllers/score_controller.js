@@ -9,7 +9,6 @@ exports.score_index = (req, res, next) => {
   })
 }
 exports.score_create = (req, res, next) => {
-  // console.log(req.query);
   let score = new Score({
     name: req.query.name || 'Cadet',
     score: req.query.score
@@ -30,7 +29,6 @@ exports.score_details = (req, res, next) =>  {
   })
 };
 exports.score_update = (req, res, next) =>  {
-  console.log(req.query);
   let updateObj = {};
   if(req.query.name){
     updateObj.name = req.query.name;
