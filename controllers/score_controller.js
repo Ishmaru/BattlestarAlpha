@@ -34,6 +34,14 @@ exports.score_details = (req, res, next) =>  {
     res.send(score);
   })
 };
+exports.score_top = (req, res, next) =>  {
+  Score.find({}, function(err, scores){
+    if (err) {
+      return next(err);
+    }
+    res.send(scores);
+  }).sort({score:-1}).limit(3);
+};
 exports.score_update = (req, res, next) =>  {
   if(req.query.secret === process.env.SECRET_KEY){
     let updateObj = {};

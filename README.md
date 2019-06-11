@@ -8,9 +8,15 @@ WebGl shooter
 
 ### Api
 Routes:
+
+Standard routes:
 ```
 GET /scores  - Grab all scores
 GET /scores/{_id} - Grab that Score Data
+GET /scores/top - Grab Top 3 players
+```
+Requires SecretKey:
+```
 GET /scores/create?name={userName}&score={score} - Post a new score
 GET /scores/{_id}/update?name={userName}&score={score} - Update score
 GET /scores/{_id}/delete - Remove score
