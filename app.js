@@ -20,6 +20,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/scores', score);
 
+//Game route
+app.use(express.static('./game', ['index']));
+
 var port = 9000;
 
 app.listen(port, () => {
