@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5cf83c5270ce407600eeb4d5"},"name":"Triton","score":100,"__v":0}
+{"_id":{"$oid":"5cf83d5470ce407600eeb4d6"},"name":"Astar","score":200,"__v":0}
+{"_id":{"$oid":"5cf83d5570ce407600eeb4d7"},"name":"Titan","score":300,"__v":0}

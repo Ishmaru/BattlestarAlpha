@@ -4,8 +4,7 @@
   "description": "Battlestar WebGl Application",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "seedDB": "mongoimport -h ds149672.mlab.com:49672 -d battlestar_alpha -c scores -u StarOfficer -p 1LastStarfighter --file ./seed.json"
+    "start": "node app.js"
   },
   "author": "KrazyKeetGames",
   "license": "ISC",
