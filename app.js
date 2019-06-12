@@ -25,6 +25,6 @@ app.use(express.static('./game', ['index']));
 
 var port = 9000;
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port , () => {
   console.log('server:' + port);
 })
