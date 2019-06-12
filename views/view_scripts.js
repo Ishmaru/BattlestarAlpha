@@ -1,8 +1,9 @@
 (function () {
   let renderDom = (responseObj) => {
     // .classList.add('show')
+    let tempArr =  responseObj.sort((a, b)=>{return b.score - a.score})
     let ul = document.getElementById('ScoreList');
-    responseObj.forEach((item) => {
+    tempArr.forEach((item) => {
       let score = document.createElement('span');
       score.innerHTML=item.score;
       let name = document.createElement('span');
@@ -13,7 +14,6 @@
       li.appendChild(score);
     })
   }
-
 
   fetch('../scores')
     .then(function(response) {
