@@ -22,7 +22,7 @@ app.use('/scores', score);
 
 //Game route
 app.use(express.static('./game', ['index']));
-
+app.use('/highscores', express.static('./views', ['index']));
 var port = 9000;
 
 app.listen(process.env.PORT || port , () => {
